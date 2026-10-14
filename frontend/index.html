@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b100e">
+  <meta name="description" content="EcoSort AI — intelligent waste classification, recycling guidance and sustainable disposal.">
+
+  <title>EcoSort AI — Smart Waste Intelligence</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script defer src="/js/api.js"></script>
+  <script defer src="/js/dashboard.js"></script>
+  <script defer src="/js/matrix.js"></script>
+  <script defer src="/js/scanner.js"></script>
+  <script defer src="/js/chatbot.js"></script>
+  <script defer src="/js/app.js"></script>
+</head>
+
+<body data-theme="dark">
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" data-scroll-target="overview" aria-label="EcoSort AI home">
+        <span class="brand-mark">E<span>↗</span></span>
+        <span class="brand-copy">
+          <strong>ecosort<span>.ai</span></strong>
+          <small>WASTE INTELLIGENCE</small>
+        </span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+
+      <nav class="side-nav" aria-label="Main navigation">
+        <a href="#overview" data-scroll-target="overview" class="nav-link active">
+          <span class="nav-icon">◫</span>
+          <span>Overview</span>
+        </a>
+        <a href="#scanner" data-scroll-target="scanner" class="nav-link">
+          <span class="nav-icon">⌗</span>
+          <span>AI Scanner</span>
+          <span class="nav-pill">AI</span>
+        </a>
+        <a href="#analytics" data-scroll-target="analytics" class="nav-link">
+          <span class="nav-icon">▥</span>
+          <span>Analytics</span>
+        </a>
+        <a href="#matrix" data-scroll-target="matrix" class="nav-link">
+          <span class="nav-icon">▦</span>
+          <span>Waste library</span>
+        </a>
+        <a href="#assistant" data-scroll-target="assistant" class="nav-link">
+          <span class="nav-icon">✳</span>
+          <span>AI assistant</span>
+        </a>
+        <button id="open-settings-nav" class="nav-link settings-nav-btn" type="button" aria-label="Open AI settings modal">
+          <span class="nav-icon">⚙</span>
+          <span>AI Settings</span>
+          <span class="nav-pill">KEY</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-divider"></div>
+
+      <div class="sidebar-label">YOUR IMPACT</div>
+
+      <div class="sidebar-impact">
+        <div class="impact-orbit">
+          <span>♻</span>
+        </div>
+        <strong>Small actions.</strong>
+        <strong class="green-text">Cleaner planet.</strong>
+        <p>Make better waste decisions, one item at a time.</p>
+        <a href="#scanner" data-scroll-target="scanner" class="text-link">
+          Start scanning <span>↗</span>
+        </a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="connection-line">
+          <span id="connection-dot" class="connection-dot is-offline"></span>
+          <span id="connection-status">Connecting...</span>
+        </div>
+        <div class="sidebar-version">
+          <span class="version-dot"></span>
+          EcoSort AI <span>v1.0</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area" id="overview">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Open navigation">☰</button>
+          <div>
+            <div class="breadcrumb">Workspace <span>/</span> Overview</div>
+            <div class="topbar-greeting">Good for the planet. <span>Better for tomorrow.</span></div>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="open-settings-button" class="live-indicator clickable-indicator" type="button" aria-label="Open AI engine settings">
+            <span class="live-dot"></span>
+            <span>AI SYSTEM</span>
+            <span class="indicator-gear">⚙</span>
+          </button>
+
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+            <span id="theme-toggle-icon" aria-hidden="true">☼</span>
+            <span id="theme-toggle-label">Light mode</span>
+          </button>
+
+          <a class="avatar-button" href="#assistant" data-scroll-target="assistant" aria-label="Open AI assistant">E</a>
+        </div>
+      </header>
+
+      <div class="page-content">
+
+        <section class="hero-section" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-star">✳</span> INTELLIGENT WASTE MANAGEMENT</div>
+            <h1 id="hero-title">Waste less.<br><span>Think greener.</span></h1>
+            <p>Turn everyday waste into smarter decisions with AI-powered identification and practical disposal guidance.</p>
+            <div class="hero-actions">
+              <a href="#scanner" data-scroll-target="scanner" class="primary-button"> <span>⌗</span> Scan an item <span class="button-arrow">↗</span></a>
+              <a href="#matrix" data-scroll-target="matrix" class="secondary-button">Explore waste library <span>→</span></a>
+            </div>
+            <div class="hero-trust">
+              <span class="trust-icon">✓</span>
+              Image-based predictions
+              <span class="trust-separator">·</span>
+              <span class="trust-icon">✓</span>
+              Actionable guidance
+            </div>
+          </div>
+
+          <div class="hero-art" aria-label="Illustration of a sustainable planet">
+            <div class="art-grid"></div>
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="planet">
+              <div class="planet-shine"></div>
+              <span class="planet-leaf leaf-one">♧</span>
+              <span class="planet-leaf leaf-two">♧</span>
+              <span class="planet-ring">♻</span>
+            </div>
+            <div class="floating-tag tag-ai"><span class="tag-dot"></span> AI powered</div>
+            <div class="floating-tag tag-earth">◉ &nbsp; Earth first</div>
+            <div class="art-caption"><span>01</span> INTELLIGENCE FOR A BETTER PLANET</div>
+          </div>
+        </section>
+
+        <section class="stats-grid" id="analytics" aria-label="Scan statistics">
+          <article class="stat-card stat-featured">
+            <div class="stat-top">
+              <span class="stat-label">TOTAL SCANS</span>
+              <span class="stat-icon">⌗</span>
+            </div>
+            <div class="stat-number" id="stat-scans">0</div>
+            <div class="stat-bottom"><span class="stat-accent">↗</span> Your classification activity</div>
+            <div class="stat-progress"><span style="width: 68%"></span></div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span class="stat-label">RECYCLABLE ITEMS</span>
+              <span class="stat-icon stat-icon-green">♻</span>
+            </div>
+            <div class="stat-number" id="stat-recyclable">0</div>
+            <div class="stat-bottom">Potentially recyclable classifications</div>
+            <div class="stat-progress"><span style="width: 46%"></span></div>
+          </article>
+
+          <article class="stat-card">
+            <div class="stat-top">
+              <span class="stat-label">NEEDS REVIEW</span>
+              <span class="stat-icon stat-icon-amber">⌕</span>
+            </div>
+            <div class="stat-number" id="stat-review">0</div>
+            <div class="stat-bottom">Items needing extra verification</div>
+            <div class="stat-progress progress-amber"><span style="width: 25%"></span></div>
+          </article>
+
+          <article class="stat-card stat-message-card">
+            <div class="message-card-icon">✳</div>
+            <div class="message-card-title">Better sorting<br>starts here.</div>
+            <a href="#scanner" data-scroll-target="scanner">Classify an item <span>↗</span></a>
+          </article>
+        </section>
+
+        <section class="section-block" id="scanner">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">01 / IDENTIFY</div>
+              <h2>AI waste scanner<span class="heading-period">.</span></h2>
+              <p>Upload a photo and let AI identify the visible waste item.</p>
+            </div>
+            <div class="section-badge"><span class="live-dot"></span> VISION ENGINE</div>
+          </div>
+
+          <div class="scanner-layout">
+            <article class="panel scanner-panel">
+              <div class="panel-heading">
+                <div class="panel-heading-icon">⌗</div>
+                <div>
+                  <h3>Upload your image</h3>
+                  <p>Clear photos help produce better predictions.</p>
+                </div>
+              </div>
+
+              <div id="upload-zone" class="upload-zone">
+                <div class="upload-graphic">
+                  <div class="upload-graphic-inner">↑</div>
+                  <span class="upload-spark spark-a">✳</span>
+                  <span class="upload-spark spark-b">·</span>
+                </div>
+                <h3>Drop your image here</h3>
+                <p>or browse files from your device</p>
+                <label for="image-input" class="browse-button">Browse images <span>↗</span></label>
+                <div class="upload-formats">JPG <span>·</span> PNG <span>·</span> WEBP <span>·</span> MAX 10 MB</div>
+                <input id="image-input" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+              </div>
+
+              <div class="camera-row">
+                <span class="camera-hint"><span>◎</span> Prefer a live photo?</span>
+                <button id="camera-button" type="button" class="outline-button">Use camera <span>↗</span></button>
+                <input id="camera-input" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" hidden>
+              </div>
+
+              <div id="image-preview-wrap" class="image-preview-wrap" hidden>
+                <div class="preview-header">
+                  <span><span class="preview-status-dot"></span> IMAGE SELECTED</span>
+                  <button id="remove-image" type="button" class="icon-button" aria-label="Remove selected image">✕</button>
+                </div>
+                <img id="image-preview" alt="Selected waste item preview">
+              </div>
+
+              <div id="scan-message" class="scan-message" role="status" aria-live="polite"></div>
+
+              <button id="scan-button" type="button" class="scan-button" disabled>
+                <span>✳</span> Analyze waste item <span class="button-arrow">↗</span>
+              </button>
+
+              <div class="privacy-note"><span>◇</span> AI predictions can be uncertain. Verify important disposal decisions locally.</div>
+            </article>
+
+            <article class="panel result-panel">
+              <div class="result-panel-top">
+                <div>
+                  <div class="section-kicker">ANALYSIS OUTPUT</div>
+                  <h3>Classification result</h3>
+                </div>
+                <span class="result-live-badge"><span class="live-dot"></span> LIVE RESULT</span>
+              </div>
+
+              <div id="result-state">
+                <div id="empty-result" class="empty-result">
+                  <div class="empty-visual">
+                    <div class="empty-ring ring-one"></div>
+                    <div class="empty-ring ring-two"></div>
+                    <div class="empty-center">✳</div>
+                    <span class="empty-particle particle-one">·</span>
+                    <span class="empty-particle particle-two">+</span>
+                  </div>
+                  <h3>Your next scan<br><span>starts a greener habit.</span></h3>
+                  <p>Your classification, confidence and disposal guidance will appear here after analysis.</p>
+                  <div class="empty-steps">
+                    <div><span>01</span> Upload</div>
+                    <span class="steps-line"></span>
+                    <div><span>02</span> Analyze</div>
+                    <span class="steps-line"></span>
+                    <div><span>03</span> Sort</div>
+                  </div>
+                </div>
+
+                <div id="classification-result" class="classification-result" hidden>
+                  <div class="classification-identity">
+                    <div id="result-category-icon" class="result-category-icon">♻</div>
+                    <div class="classification-name">
+                      <div class="section-kicker">IDENTIFIED ITEM</div>
+                      <h3 id="result-item-name">Waste item</h3>
+                      <p id="result-category-label">Category</p>
+                    </div>
+                  </div>
+
+                  <div class="confidence-row">
+                    <span>AI-reported confidence</span>
+                    <strong id="result-confidence">—</strong>
+                  </div>
+
+                  <div id="result-review" class="review-notice" hidden>Review this result before deciding how to dispose of the item.</div>
+
+                  <div class="evidence-block">
+                    <div class="mini-heading">VISUAL EVIDENCE</div>
+                    <p id="result-evidence"></p>
+                  </div>
+
+                  <div class="disposal-block">
+                    <div class="disposal-heading">
+                      <span class="disposal-heading-icon">♻</span>
+                      <div>
+                        <div class="mini-heading">RECOMMENDED DISPOSAL</div>
+                        <strong id="result-disposal-category"></strong>
+                      </div>
+                    </div>
+                    <ul id="result-instructions"></ul>
+                    <p id="result-caution-text" class="result-caution"></p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block history-section">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">02 / ACTIVITY</div>
+              <h2>Your scan history<span class="heading-period">.</span></h2>
+              <p>Review your recent classifications on this device.</p>
+            </div>
+            <button id="clear-history-button" class="outline-button" type="button">Clear history <span>⌫</span></button>
+          </div>
+
+          <div class="panel history-panel">
+            <div class="history-table-heading">
+              <span>ITEM / CLASSIFICATION</span>
+              <span>CATEGORY</span>
+              <span>CONFIDENCE</span>
+              <span>DATE</span>
+            </div>
+            <div id="scan-history" class="scan-history">
+              <div class="history-empty">
+                <span>⌗</span>
+                <p>Your scan history will appear here after your first successful classification.</p>
+              </div>
+            </div>
+          </div>
+          <p class="history-footnote">History is stored locally in your browser. Clearing browser storage may remove it.</p>
+        </section>
+
+        <section class="section-block matrix-section" id="matrix">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">03 / LEARN</div>
+              <h2>Know your waste<span class="heading-period">.</span></h2>
+              <p>Explore common categories and their disposal considerations.</p>
+            </div>
+            <div class="library-count">9 CATEGORIES <span>·</span> REFERENCE LIBRARY</div>
+          </div>
+
+          <div class="matrix-toolbar">
+            <div class="matrix-search-wrap">
+              <span>⌕</span>
+              <input id="matrix-search" type="search" placeholder="Search waste categories..." aria-label="Search waste categories">
+            </div>
+            <span class="matrix-hint">Search by material or item</span>
+          </div>
+
+          <div id="waste-matrix" class="waste-matrix">
+            <div class="matrix-loading">Loading waste categories...</div>
+          </div>
+
+          <div class="matrix-disclaimer"><span>ⓘ</span> Disposal requirements differ by location. Check your local waste service for final guidance.</div>
+        </section>
+
+        <section class="section-block assistant-section" id="assistant">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">04 / ASK</div>
+              <h2>Your sustainability copilot<span class="heading-period">.</span></h2>
+              <p>Ask practical questions about sorting, recycling and safe disposal.</p>
+            </div>
+            <div class="assistant-model-badge"><span class="assistant-pulse"></span> AI ASSISTANT</div>
+          </div>
+
+          <div class="assistant-layout">
+            <aside class="assistant-intro">
+              <div class="assistant-orb"><span>✳</span></div>
+              <div class="section-kicker">MEET YOUR ASSISTANT</div>
+              <h3>Better questions.<br><span>Better waste habits.</span></h3>
+              <p>Get clear, practical explanations about what goes where and why.</p>
+              <div class="suggestion-label">TRY ASKING</div>
+              <button class="suggestion-chip" type="button" data-chat-prompt="Can I recycle a greasy pizza box?">Can I recycle a greasy pizza box? <span>↗</span></button>
+              <button class="suggestion-chip" type="button" data-chat-prompt="How should I dispose of old batteries safely?">How do I dispose of batteries? <span>↗</span></button>
+              <button class="suggestion-chip" type="button" data-chat-prompt="What is the difference between recycling and composting?">Recycling vs composting <span>↗</span></button>
+            </aside>
+
+            <article class="panel chat-panel">
+              <div class="chat-header">
+                <div class="chat-avatar">✳</div>
+                <div>
+                  <strong>EcoSort assistant</strong>
+                  <span><span class="assistant-pulse"></span> Waste guidance</span>
+                </div>
+                <span class="chat-header-tag">AI</span>
+              </div>
+
+              <div id="chat-messages" class="chat-messages" aria-live="polite" aria-label="Chat conversation"></div>
+
+              <form id="chat-form" class="chat-form">
+                <label class="sr-only" for="chat-input">Ask a waste-management question</label>
+                <textarea id="chat-input" rows="1" maxlength="1000" placeholder="Ask anything about waste..." required></textarea>
+                <button id="chat-send-button" type="submit" class="chat-send-button" aria-label="Send message">↑</button>
+              </form>
+              <div class="chat-footer">
+                <span id="chat-status" role="status">Ask about recycling, sorting, or disposal.</span>
+                <span>AI can make mistakes. Verify local rules.</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="app-footer">
+          <a class="footer-brand" href="#overview" data-scroll-target="overview"><span>♻</span> EcoSort AI</a>
+          <p>Smarter sorting. A more sustainable tomorrow.</p>
+          <span>© <span id="current-year">2026</span> EcoSort AI</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- AI Settings Modal -->
+  <div id="ai-settings-modal" class="modal-backdrop" hidden aria-hidden="true" role="dialog" aria-labelledby="settings-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge"><span class="live-dot"></span> ENGINE CONFIG</span>
+          <h3 id="settings-title">AI Engine Settings</h3>
+        </div>
+        <button id="ai-settings-close" class="modal-close" type="button" aria-label="Close settings">✕</button>
+      </div>
+      <p class="modal-desc">Configure the Gemini AI model and API key powering real-time waste analysis and the assistant copilot.</p>
+
+      <form id="ai-settings-form" class="settings-form">
+        <div class="form-group">
+          <label for="ai-model">Selected Gemini Model</label>
+          <select id="ai-model" class="form-select">
+            <option value="gemini-3-flash-preview">Gemini 3 Flash (Fast & Recommended)</option>
+            <option value="gemini-3.8-flash">Gemini 3.8 Flash</option>
+            <option value="gemini-3.5-flash-lite">Gemini 3.5 Flash-Lite</option>
+            <option value="gemini-3.1-pro-preview">Gemini 3.1 Pro</option>
+          </select>
+          <small class="form-hint">Fast multimodal models recommended for instant waste classification.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="ai-api-key">Gemini API Key</label>
+          <input id="ai-api-key" type="password" class="form-input" placeholder="Enter new API key (leave blank to keep current)">
+          <small id="ai-key-status" class="form-hint">Checking API key status...</small>
+        </div>
+
+        <div id="ai-settings-message" class="ai-settings-message" role="status"></div>
+
+        <div class="modal-actions">
+          <button id="ai-test-button" type="button" class="secondary-button modal-btn">
+            <span>⚡</span> Test connection
+          </button>
+          <button id="ai-save-button" type="submit" class="primary-button modal-btn">
+            <span>💾</span> Save settings
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

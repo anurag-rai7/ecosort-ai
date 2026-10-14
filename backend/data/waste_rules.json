@@ -1,0 +1,101 @@
+{
+  "plastic_bottle": {
+    "display_name": "Plastic bottle",
+    "category": "Recyclable",
+    "instructions": [
+      "Empty any remaining liquid from the bottle.",
+      "Lightly rinse if required by your local recycling program.",
+      "Crush the bottle to save space and replace the cap.",
+      "Check local recycling rules for accepted plastic resin numbers (PET #1, HDPE #2)."
+    ],
+    "caution": "A visual prediction cannot confirm the exact plastic resin. Black plastics and unmarked polymers may need special sorting."
+  },
+  "paper_cardboard": {
+    "display_name": "Paper or cardboard",
+    "category": "Usually recyclable",
+    "instructions": [
+      "Keep paper and cardboard clean and completely dry.",
+      "Flatten cardboard boxes to save bin capacity.",
+      "Remove plastic tape, bubble wrap, and plastic film.",
+      "Separate and discard grease-soaked or food-soiled sections."
+    ],
+    "caution": "Greasy pizza boxes, wax-coated cartons, and heavily contaminated paper cannot be recycled with regular paper."
+  },
+  "glass": {
+    "display_name": "Glass item",
+    "category": "Check local rules",
+    "instructions": [
+      "Rinse food and beverage glass containers.",
+      "Separate by color (clear, green, brown) if your municipal program requires it.",
+      "Remove metal or plastic caps and lids.",
+      "Handle broken glass carefully, wrapped in paper or cardboard for safety."
+    ],
+    "caution": "Drinking glasses, cookware (Pyrex), ceramics, mirrors, and window panes melt at different temperatures and cannot go into standard bottle banks."
+  },
+  "metal_can": {
+    "display_name": "Metal can",
+    "category": "Usually recyclable",
+    "instructions": [
+      "Empty and rinse remaining food or beverage residue.",
+      "Aluminum cans and steel/tin cans are widely accepted in curbside recycling.",
+      "Keep lids attached or push them inside the can.",
+      "Do not crush aerosol cans."
+    ],
+    "caution": "Ensure aerosol cans are completely empty before recycling. Never recycle cans that contained paint, chemicals, or automotive fluids in standard bins."
+  },
+  "organic_waste": {
+    "display_name": "Organic waste",
+    "category": "Compostable where accepted",
+    "instructions": [
+      "Separate food scraps, fruit peels, vegetable cuttings, and coffee grounds from packaging.",
+      "Place in your household compost bin or municipal green waste bin.",
+      "Use certified 100% compostable bags if bags are required.",
+      "Follow local rules regarding meat, dairy, and cooked food composting."
+    ],
+    "caution": "Not every municipal compost facility accepts bones, fats, or pet waste. Never include plastic stickers or plastic food packaging."
+  },
+  "electronic_waste": {
+    "display_name": "Electronic waste",
+    "category": "Special collection",
+    "instructions": [
+      "Take electronics, cables, batteries, and appliances to an authorized e-waste drop-off site.",
+      "Remove rechargeable batteries and tape battery terminals before drop-off.",
+      "Wipe personal data from phones, laptops, and storage devices.",
+      "Many electronic retailers offer free electronics take-back programs."
+    ],
+    "caution": "Never place lithium-ion batteries or electronics into household trash or standard recycling bins—they pose severe fire risks."
+  },
+  "textile": {
+    "display_name": "Textiles & clothing",
+    "category": "Donation or textile recycling",
+    "instructions": [
+      "Clean and dry wearable clothing and shoes for local charity donation.",
+      "Torn or unwearable textiles can be dropped off at dedicated textile recycling bins.",
+      "Repurpose clean fabric scraps into household cleaning cloths.",
+      "Keep textiles out of curbside recycling bins as they jam sorting machinery."
+    ],
+    "caution": "Mildewed or chemically soiled fabrics must be disposed of in general waste to prevent contamination."
+  },
+  "hazardous": {
+    "display_name": "Hazardous household waste",
+    "category": "Special hazardous disposal",
+    "instructions": [
+      "Keep substances in their original labeled containers.",
+      "Never mix chemicals, solvents, or household cleaners together.",
+      "Transport securely upright to a licensed Household Hazardous Waste (HHW) depot.",
+      "Check your municipal hazardous waste collection schedule."
+    ],
+    "caution": "Corrosive, flammable, toxic, or reactive chemicals must never be poured down the drain, onto the ground, or into trash bins."
+  },
+  "general_waste": {
+    "display_name": "Uncertain or general waste",
+    "category": "Needs verification",
+    "instructions": [
+      "Inspect the product label for specific disposal or recycling icons.",
+      "If the item is a composite material (mixed plastic and metal/paper), place it in residual landfill waste unless parts can be separated.",
+      "Check your municipal waste lookup tool for local sorting instructions.",
+      "Keep potentially hazardous materials separate from general refuse."
+    ],
+    "caution": "When in doubt, do not 'wishcycle' (tossing unknown items into recycling). Non-recyclables contaminate entire batches of clean recyclables."
+  }
+}
